@@ -1,0 +1,42 @@
+<div class="wrapper">     
+  
+
+
+
+<div ng-switch on="state">
+
+    <div ng-switch-when="parent">
+        <div ng-repeat="tile in tiles" class="tile {{colors[$index]}} aimatedn fadeIn">    
+          <div ng-click="loadElements({{$index}})">
+            <img ng-src="{{tile.icon}}"  class="tile-icon">
+            <div class="tile-name">
+             {{tile.name}}
+            </div> 
+          </div>   
+        </div>
+    </div>
+
+    <div ng-switch-default>
+
+        <div ng-repeat="tile in tiles" class="tile {{colors[$index]}} animated fadeIn" >    
+          <div ng-click="order({{$index}})">
+            <img ng-src="{{tile.icon}}"  class="tile-icon">
+            <div class="tile-name">
+             {{tile.name}}
+            </div> 
+          </div>   
+        </div>
+
+        <div class="tile  {{colors[tiles.length]}}  animated fadeIn" ng-click="back()">
+          <img ng-src="images/back.png"  class="tile-icon">
+          <div class="tile-name">
+           Retour
+          </div> 
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
